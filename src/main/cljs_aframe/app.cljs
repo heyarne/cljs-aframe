@@ -96,9 +96,9 @@
 
 (defn scene []
   [:a-scene {:stats true}
-   ;; [assets]
-   ;; [painting-panorama]
-    [video-sphere]
+   #_ [assets]
+   [painting-panorama]
+   #_ [video-sphere]
    ])
    ;; [box]
    ;; [:a-sun-sky {:material "side: back;"}]
@@ -109,13 +109,11 @@
    ;; [plane]
    ;; [sky]
    ;; [player]
-   
 
 
-
-(defn mount-components []
+(defn ^:dev/after-load mount-components []
   (render
-    [scene]
+    [stars-scene]
     (. js/document (getElementById "root"))))
 
 (defn init! []
